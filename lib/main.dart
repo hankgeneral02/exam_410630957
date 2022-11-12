@@ -21,9 +21,9 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
 
-  get image => null;
+  get i => 3;
+
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +31,11 @@ class HomePage extends StatelessWidget {
       padding: EdgeInsets.all(8),
       child: Column(
         children: [
+
           ElevatedButton(
             style: ElevatedButton.styleFrom(primary: Colors.white),
-            child: Image.asset('assets/images/5.jpg'),
+
+            child: Image.asset('assets/images/$i.jpg', height: 300,),
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
@@ -52,12 +54,22 @@ class HomePage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              ElevatedButton(onPressed: () {}, child: Text('100分')),
-              ElevatedButton(onPressed: () {}, child: Text('給過'))
+              ElevatedButton(
+                  child: Text('上一張'),
+                  onPressed: () {
+
+                  }
+              ),
+              ElevatedButton(
+                child: Text('下一張'),
+                onPressed: () {
+
+                },
+              )
             ],
           )
         ],
       ),
     );
   }
-}
+
